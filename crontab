@@ -1,0 +1,5 @@
+@@crontab@@
+crontab -e
+@@input this ---> @reboot macchanger -r eth0
+                  :wq
+
