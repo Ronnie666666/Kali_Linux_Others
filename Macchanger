@@ -1,0 +1,18 @@
+
+@@Macchanger@@
+apt-get install macchanger -y
+
+@check your mac address, choose one
+macchanger -s eth0
+ifconfig eth0
+ifconfig | grep ether
+
+@to check vendor
+macchanger -l
+
+@to change it randomly
+macchanger -r eth0
+
+@check the mac again to confirm
+macchanger -s eth0
+
