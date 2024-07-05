@@ -1,0 +1,11 @@
+@@nmap@@
+
+@example using nslook
+nslookup scanme.nmap.org
+
+@the ip address will show reverse
+nslookup _._._._
+
+@I'll try to scan my school using nmap
+nmap www.edu.psu.com -vv
+
