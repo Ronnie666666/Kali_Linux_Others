@@ -16,3 +16,7 @@ macchanger -r eth0
 @check the mac again to confirm
 macchanger -s eth0
 
+@@to automatic changes of mac address every reboot, do this crontab command
+crontab -e
+@@input this ---> @reboot macchanger -r eth0
+                  :wq
