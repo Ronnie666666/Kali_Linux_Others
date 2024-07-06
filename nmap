@@ -8,4 +8,22 @@ nslookup _._._._
 
 @I'll try to scan my school using nmap
 nmap www.edu.psu.com -vv
+@i saw so many open ports, really psu??
 
+@I'll scan my LAN and add "> /home/SCAN" to save the result
+nmap -oG - 192.168.159.0-255 -vv > /home/SCAN
+@you can scan the specific port by adding ports number ex."-p 22"
+nmap -oG - 192.168.159.0-255 -p 22 -vv > /home/SCAN
+@locate it and open
+cd /home/
+ls | grep SCAN  @@to filter
+less SCAN
+@or
+cat SCAN
+@to filter the results with just Up status, or use "awk" to show just specific things you wanna see
+cat SCAN | grep Up
+cat SCAN | grep Up | awk -F " " '{print $2}'
+@then save the file to use it
+cat SCAN | grep Up | awk -F " " '{print $2}' > SCAN3
+@then use nmap by using the saved file
+nmap -iL SCAN3 -vv
