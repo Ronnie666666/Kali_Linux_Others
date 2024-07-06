@@ -1,7 +1,7 @@
 @@nmap@@
 
-@example using nslook
-nslookup scanme.nmap.org
+@example using nslook "my school"
+nslookup www.edu.psu.com
 
 @the ip address will show reverse
 nslookup _._._._
