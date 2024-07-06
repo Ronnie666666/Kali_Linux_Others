@@ -1,15 +1,15 @@
 @@nmap@@
 
-@example using nslook "my school"
+@example using nslook
 nslookup www.edu.psu.com
 
 @the ip address will show reverse
 nslookup _._._._
 
-@I'll try to scan my school using nmap
+@I'll try this one
 nmap www.edu.psu.com -vv
 @i saw so many open ports, really psu??
-
+-----------------------------------------------------------------
 @I'll scan my LAN and add "> /home/SCAN" to save the result
 nmap -oG - 192.168.159.0-255 -vv > /home/SCAN
 @you can scan the specific port by adding ports number ex."-p 22"
@@ -27,3 +27,22 @@ cat SCAN | grep Up | awk -F " " '{print $2}'
 cat SCAN | grep Up | awk -F " " '{print $2}' > SCAN3
 @then use nmap by using the saved file
 nmap -iL SCAN3 -vv
+-----------------------------------------------------------------
+
+@@some tools for scanning with info "curl"
+apt-get install curl -y
+curl ipinfo.io/165.22.39.7
+
+@@to bypass FIrewall
+nmap --script firewall-bypass _._._._
+
+@@or
+nmap --script ftp-vsftpd-backdoor -p 22 _._._._ 
+
+
+
+
+
+
+
+
